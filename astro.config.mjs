@@ -4,12 +4,12 @@ import starlight from '@astrojs/starlight';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://piyushpatel2005.github.io',
-	base: 'django'
+	base: 'django',
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: 'Django Exploration',
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/piyushpatel2005/django-exploration',
 			},
 			sidebar: [
 				{
