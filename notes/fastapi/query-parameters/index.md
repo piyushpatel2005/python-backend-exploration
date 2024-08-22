@@ -83,3 +83,26 @@ http://localhost:8000/products?sort=id&order=asc
 ```
 
 This can be very useful when you want to filter, sort, and paginate data in your API. FastAPI makes it very easy to work with query parameters in your API.
+
+## Order of Query Parameters
+
+The order of query parameters in the URL does not matter. FastAPI will automatically parse the query parameters and pass them to the route handler function in the order they are defined. You can change the order of query parameters in the URL and it will still work as expected.
+
+The same is true when we also have path parameters in the URL. FastAPI will automatically parse the path parameters and query parameters and pass them to the route handler function in the order they are defined in the function.
+
+```bash
+http://localhost:8000/users/1/connections?sort=name&order=asc
+```
+
+In the above URL, `1` is the path parameter and `sort` and `order` are query parameters. 
+
+The definition of handler for this might look like this. This endpoint can be used to find the connections of a user and sort them by name in ascending order.
+
+```python
+@app.get("/users/{user_id}/connections")
+def get_user_connections(user_id: int, sort: str = None, order: str = None):
+    # Your code here
+    pass
+```
+
+In this case, `user_id` is a path parameter and `sort` and `order` are query parameters. FastAPI will automatically parse the path parameter `user_id` and query parameters `sort` and `order` and pass them to the route handler based on the order they are defined in the function.
