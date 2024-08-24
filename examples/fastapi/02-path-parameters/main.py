@@ -21,18 +21,17 @@ products = [
 ]
 
 
-@app.get("/")
-def home():
-    return {"message": "Hello, World"}
-
-
 @app.get("/products")
-def get_items():
+async def get_items():
     return products
-
-
 @app.get("/products/{product_id}")
-def get_item(product_id: int):
+async def get_item(product_id: int):
     for product in products:
         if product["id"] == product_id:
             return product
+
+@app.get("/products/all")
+async def get_all_items():
+    return products
+
+

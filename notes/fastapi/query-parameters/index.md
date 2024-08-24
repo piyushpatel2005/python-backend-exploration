@@ -38,12 +38,12 @@ products = [
 
 
 @app.get("/")
-def home():
+async def home():
     return {"message": "Welcome to our Ecommerce API!"}
 
 
 @app.get("/products")
-def get_items(sort: str = None, order: str = None):
+async def get_items(sort: str = None, order: str = None):
     if sort is None:
         return products
     else:
@@ -56,7 +56,7 @@ def get_items(sort: str = None, order: str = None):
 
 
 @app.get("/products/{product_id}")
-def get_item(product_id: int):
+async def get_item(product_id: int):
     for product in products:
         if product["id"] == product_id:
             return product
@@ -100,7 +100,7 @@ The definition of handler for this might look like this. This endpoint can be us
 
 ```python
 @app.get("/users/{user_id}/connections")
-def get_user_connections(user_id: int, sort: str = None, order: str = None):
+async def get_user_connections(user_id: int, sort: str = None, order: str = None):
     # Your code here
     pass
 ```

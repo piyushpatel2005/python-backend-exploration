@@ -16,7 +16,7 @@ from fastapi import FastAPI
 app = FastAPI()
 
 
-items = [
+products = [
     {"id": 1, "name": "iPhone", "price": 999.99, "brand": "Apple", "category": "Phones", "description": "The iPhone is a smartphone made by Apple Inc."},
     {"id": 2, "name": "Galaxy", "price": 899.99, "brand": "Samsung", "category": "Phones", "description": "The Galaxy is a smartphone made by Samsung."},
     {"id": 3, "name": "Pixel", "price": 799.49, "brand": "Google", "category": "Phones", "description": "The Pixel is a smartphone made by Google."},
@@ -34,21 +34,16 @@ items = [
 ]
 
 
-@app.get("/")
-def home():
-    return {"message": "Hello, World"}
-
-
 @app.get("/products")
-def get_items():
-    return items
+async def get_items():
+    return products
 
 
-@app.get("/produts/{item_id}")
-def get_item(item_id: int):
-    for item in items:
-        if item["id"] == item_id:
-            return item
+@app.get("/produts/{product_id}")
+async def get_item(product_id: int):
+    for product in products:
+        if product["id"] == product_id:
+            return product
 ```
 
 In above code, I have defined `products` as list of products I've available in my store. I have included three routes for this web API.
@@ -71,4 +66,41 @@ Try paths with different `item_id` values to see the different items returned by
 
 Interestingly, when we return `items` from the `get_item` function, we are actually returning Python dictionary and not JSON object. FastAPI automatically converts the Python dictionary to JSON format. This is because FastAPI uses Pydantic models to serialize and deserialize data. Pydantic is a data validation and parsing library for Python. It defines a schema for the data and validates the data against the schema.
 
-It's so easy to write RESTful APIs with FastAPI. We can define routes and path parameters with just a few lines of code. FastAPI takes care of the rest, including data validation, serialization, and deserialization.
+## Order Matters
+
+In above example, we had only two endpoints, however, if I add another endpoint like this in the middle of the two endpoints above.
+
+```python
+@app.get("/products")
+async def get_items():
+    return items
+
+
+@app.get("/produts/{product_id}")
+async def get_item(product_id: int):
+    for product in products:
+        if product["id"] == product_id:
+            return product
+
+@app.get("/products/all")
+async def get all_items():
+    return items
+```
+
+In this case, when I try to access `/products/all` endpoint, I get `404 Not Found` error because the FastAPI cannot parse  `all` as an integer and it tries to match the path parameter with the second endpoint which is `/products/{product_id}`. To fix this, we need to move the `/products/all` endpoint above the `/products/{product_id}` endpoint. 
+
+```python
+@app.get("/products/all")
+async def get all_items():
+    return items
+
+@app.get("/produts/{product_id}")
+async def get_item(product_id: int):
+    for product in products:
+        if product["id"] == product_id:
+            return product
+```
+
+So, the order of endpoints matter if two endpoints match the same path but with different path parameters.
+
+Overall, It's so easy to write RESTful APIs with FastAPI. We can define routes and path parameters with just a few lines of code. FastAPI takes care of the rest, including data validation, serialization, and deserialization.

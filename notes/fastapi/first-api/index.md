@@ -10,7 +10,7 @@ from fastapi import FastAPI
 app = FastAPI()
 
 @app.get("/")
-def home():
+async def home():
     return {"message": "Hello, World"}
 ```
 
@@ -43,7 +43,7 @@ application = FastAPI()
 
 
 @application.get("/")
-def home():
+async def home():
     return {"message": "Hello, World"}
 ```
 
