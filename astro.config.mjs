@@ -4,12 +4,12 @@ import starlight from '@astrojs/starlight';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://piyushpatel2005.github.io',
-	base: 'django-exploration',
+	base: 'python-backend-exploration',
 	integrations: [
 		starlight({
-			title: 'Django Exploration',
+			title: 'Python Dev',
 			social: {
-				github: 'https://github.com/piyushpatel2005/django-exploration',
+				github: 'https://github.com/piyushpatel2005/python-backend-exploration',
 			},
 			sidebar: [
 				{
@@ -23,7 +23,23 @@ export default defineConfig({
 					label: 'Reference',
 					autogenerate: { directory: 'reference' },
 				},
+				{
+					label: 'Python',
+					autogenerate: { directory: 'python' },
+				},
+				{
+					label: 'Django',
+					autogenerate: { directory: 'django' },
+				},
+				{
+					label: 'FastAPI',
+					autogenerate: { directory: 'fastapi' },
+				}
 			],
+			components: {
+				// Add custom components to the Astro project
+				Sidebar: './src/overrides/Sidebar.astro',
+			}
 		}),
 	],
 });
