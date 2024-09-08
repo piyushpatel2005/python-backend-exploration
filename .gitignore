@@ -27,3 +27,4 @@ pnpm-debug.log*
 *.db
 *.png
 **/.venv
+**/data.db

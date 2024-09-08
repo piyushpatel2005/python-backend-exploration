@@ -1,12 +1,14 @@
+import os
 from typing import AsyncGenerator, Generator
 
 import pytest
 from fastapi.testclient import TestClient
 from httpx import ASGITransport, AsyncClient
 
-from socialapi.main import app
-from socialapi.routers.post import comment_table, post_table
+os.environ["ENV_STATE"] = "test"
 
+from socialapi.database import database #noqa: E402
+from socialapi.main import app # noqa: E402
 
 @pytest.fixture(scope="session")
 def anyio_backend() -> str:
@@ -19,10 +21,10 @@ def client() -> Generator:
 
 
 @pytest.fixture(autouse=True)
-async def db() -> Generator:
-    post_table.clear()
-    comment_table.clear()
+async def db() -> AsyncGenerator:
+    await database.connect()
     yield
+    await database.disconnect()
 
 
 @pytest.fixture

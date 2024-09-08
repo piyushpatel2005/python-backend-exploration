@@ -12,7 +12,7 @@ FastAPI is a modern, fast (high-performance), web framework for building APIs wi
 - [Path Parameters](path-parameters/index.md)
 - [Query Parameters](query-parameters/index.md)
 - [OpenAPI and Swagger UI](openapi-swagger-ui/index.md)
-- [Postman](postman/index.md)
+- [Handling POST, PATCH and DELETE Request](implementing-crud/index.md)
 - [Pydantic BaseModel](pydantic-base-model/index.md)
 This will show how to create BaseModel for input data and how to return data with different classes. You can also use `APIRouter` to group routes and include in `main` file. You can use `prefix` to add prefix to all routes in the router.
 - [Unit Testing with Pytest](unit-testing/index.md)
