@@ -26,3 +26,4 @@ This are set of Python tutorials covering basics of Python to advanced topics. T
 - [Error Handling](error-handling/index.md)
 - [Modules and Packages](modules-and-packages/index.md)
 - [OOP Classes and Objects](oop-classes-and-objects/index.md)
+- [Enums](enums/index.md)

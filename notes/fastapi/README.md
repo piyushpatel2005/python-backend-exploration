@@ -19,7 +19,5 @@ This will show how to create BaseModel for input data and how to return data wit
 - [Unit Testing FastAPI](unit-testing-fastapi/index.md)
 - [Returning Correct Response Status Codes](response-status-codes/index.md)
 - [Request Body](request-body/index.md)
-- [Implementing CRUD Operations](crud-operations/index.md)
-- [Built-in OpenAPI Documentation](openapi/index.md)
 - [Response Model](response-model/index.md)
 - [Dependencies](dependencies/index.md)
