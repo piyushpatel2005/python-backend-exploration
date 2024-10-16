@@ -4,7 +4,7 @@ on:
   # Trigger the workflow every time you push to the `main` branch
   # Using a different branch name? Replace `main` with your branch’s name
   push:
-    branches: [ main, master ]
+    branches: [ main, master, design ]
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
@@ -17,9 +17,19 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./.github
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
+      - name: Echo GITHUB_WORKSPACE
+        run: echo $GITHUB_WORKSPACE
+#      - name: Test Custom script
+#        run: bash script.sh ${GITHUB_WORKSPACE}
+      - name: Run Custom code
+        run: bash script.sh ${GITHUB_WORKSPACE}
+        shell: bash
       - name: Install, build, and upload your site
         uses: withastro/action@v2
         # with:

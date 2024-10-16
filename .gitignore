@@ -25,6 +25,5 @@ pnpm-debug.log*
 *.pyc
 **/__pycache__
 *.db
-*.png
 **/.venv
 **/data.db

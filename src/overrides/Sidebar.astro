@@ -1,0 +1,65 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+import Default from '@astrojs/starlight/components/Sidebar.astro';
+
+// Get the base path of the current URL
+// e.g. `/product-2/some-page/` returns `/product-2/`
+const currentBase = Astro.url.pathname.split('/').slice(0, 3).join('/');
+
+// Filter our sidebar groups that do not include links to the current product.
+Astro.props.sidebar = Astro.props.sidebar
+  .filter((entry) => (
+    entry.type === 'group' &&
+    entry.entries.some(
+      (subEntry) => subEntry.type === 'link' && subEntry.href.startsWith(currentBase)
+    )
+  ));
+// Astro.props.sidebar
+//     .filter((entry) => (
+//         entry.type === 'group' &&
+//         entry.entries.some(
+//             (subEntry) => subEntry.type === 'link' && subEntry.href.startsWith(currentBase)
+//         )
+//     )).forEach((entry) => {
+//         console.log(entry.label);
+// });
+// console.log(typeof Astro.props.sidebar);
+// console.log(Astro.props.sidebar);
+// Astro.props.sidebar.forEach((entry) => {
+//     entry.entries.forEach((subEntry) => {
+//         console.log(subEntry.entries);
+//     });
+// });
+// console.log(Astro.props.sidebar);
+
+
+// Astro.props.sidebar = [
+//     {
+//         "type": "group",
+//         "label": "Python Tutorial",
+//         "collapsed": false,
+//         badge: undefined,
+//         "entries":[
+//             {
+//                 "type": "link",
+//                 "label": "Args and Kwargs",
+//                 "href": "/python-backend-exploration/python/args-and-kwargs/",
+//                 "badge": undefined,
+//                 "isCurrent": false,
+//                 attrs: {}
+//             },
+//             {
+//                 "type": "link",
+//                 "label": "Variables and Data Types",
+//                 "href": "/python-backend-exploration/python/variables-and-data-types/",
+//                 "badge": undefined,
+//                 "isCurrent": false,
+//                 attrs: {}
+//             }
+//         ]
+//     }
+// ]
+
+---
+
+<Default {...Astro.props}><slot /></Default>
