@@ -17,6 +17,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./.github
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
@@ -28,13 +31,14 @@ jobs:
         run: echo $BUILD_NUMBER
       - name: List $GITHUB_WORKSPACE
         run: echo $PWD && echo $GITHUB_WORKSPACE && chmod +x ${GITHUB_WORKSPACE}/.github/script.sh && ls -lR ${GITHUB_WORKSPACE}
-      - name: Test Custom script
+#      - name: Test Custom script
+#        run: bash script.sh ${GITHUB_WORKSPACE}
+      - name: Run Custom code
         run: bash script.sh ${GITHUB_WORKSPACE}
-#      - name: Run Custom code
 #        run: |
 #          chmod +x "${GITHUB_WORKSPACE}/.github/script.sh"
 #          "${GITHUB_WORKSPACE}/.github/script.sh ${GITHUB_WORKSPACE}"
-#        shell: bash
+        shell: bash
       - name: Install, build, and upload your site
         uses: withastro/action@v2
         # with:
