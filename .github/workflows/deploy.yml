@@ -27,7 +27,7 @@ jobs:
       - name: Echo BUILD_NUMBER
         run: echo $BUILD_NUMBER
       - name: List $GITHUB_WORKSPACE
-        run: ls -la $GITHUB_WORKSPACE/.github
+        run: echo $PWD && echo $GITHUB_WORKSPACE && ls -la $GITHUB_WORKSPACE
       - name: Run Custom code
         run: |
           chmod +x "${GITHUB_WORKSPACE}/.github/script.sh"
