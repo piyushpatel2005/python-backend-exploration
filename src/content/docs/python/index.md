@@ -6,7 +6,7 @@ title: Python Tutorials
 
 ## Table of Contents
 
-- [Python Overview](overview-of-python/index.md)
+- [Python Overview](overview-of-python/)
 - [Variables and Data Types](variables-and-data-types/index.md)
 - [Operators](operators-in-python/index.md)
 - [String Formatting](string-formatting/index.md)

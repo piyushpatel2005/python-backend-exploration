@@ -1,8 +1,8 @@
 ---
-title: Creating First API with FastAPI
+title: FastAPI First Example
+sidebar:
+  order: 5
 ---
-
-# FastAPI First Example
 
 Now, that you've your environment setup, it's time to create our first FastAPI application.
 

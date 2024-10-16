@@ -1,8 +1,8 @@
 ---
-title: Installation for FastAPI Development
+title: FastAPI Environment Set up
+sidebar:
+  order: 2
 ---
-
-# FastAPI Environment Set up
 
 In order to work with FastAPI, you need to have Python installed on your system. You can download Python from the official website [Python.org](https://www.python.org/downloads/).
 

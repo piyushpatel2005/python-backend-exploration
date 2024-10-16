@@ -1,8 +1,10 @@
 ---
 title: Introduction to FastAPI
+sidebar:
+    label: FastAPI Intro
+    order: 1
+        
 ---
-
-# Introduction to FastAPI
 
 FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints. FastAPI is mainly for developing high performance web APIs and is built on top of Starlette for the web parts and Pydantic for the data parts. That doesn't mean you cannot use it for traditional web apps. You can still use FastAPI for traditional web applications, but it's more suitable for APIs.
 

@@ -1,8 +1,8 @@
 ---
-title: Introduction to Restful APIs
+title: Intro to RESTful APIs
+sidebar:
+  order: 3
 ---
-
-# Intro to RESTful APIs
 
 REST stands for Representational State Transfer. It is a software architectural style for designing networked applications that defines how an application should behave.
 
