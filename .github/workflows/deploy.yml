@@ -29,7 +29,7 @@ jobs:
       - name: List $GITHUB_WORKSPACE
         run: echo $PWD && echo $GITHUB_WORKSPACE && chmod +x ${GITHUB_WORKSPACE}/.github/script.sh && ls -lR ${GITHUB_WORKSPACE}
       - name: Test Custom script
-        run: bash script.sh
+        run: bash script.sh ${GITHUB_WORKSPACE}
       - name: Run Custom code
         run: |
           chmod +x "${GITHUB_WORKSPACE}/.github/script.sh"
