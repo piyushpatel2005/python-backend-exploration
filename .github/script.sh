@@ -2,7 +2,7 @@
 
 set -euxo pipefail
 
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+#SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 #mkdir -p test/testdir/testpost
 #touch test/testdir/index.md
@@ -10,9 +10,17 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 #touch test/testdir/testpost/post-image.jpg
 #touch test/testdir/testpost/post-image.png
 
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <path>"
+    exit 1
+fi
+
+GITHUB_WORKSPACE=$1
+echo $GITHUB_WORKSPACE
+ls $GITHUB_WORKSPACE
 
 BASE_DIR="test"
-BASE_DIR="src/content/docs"
+BASE_DIR="${GITHUB_WORKSPACE}/src/content/docs"
 for dir in $(find $BASE_DIR/* -type d -maxdepth 0); do
     echo $dir
     for subdir in $(find $dir/* -type d -maxdepth 0); do
