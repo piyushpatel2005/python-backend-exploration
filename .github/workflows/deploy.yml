@@ -25,19 +25,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Echo GITHUB_WORKSPACE
         run: echo $GITHUB_WORKSPACE
-      - name: Echo GITHUB_REPOSITORY
-        run: echo $GITHUB_REPOSITORY
-      - name: Echo BUILD_NUMBER
-        run: echo $BUILD_NUMBER
-      - name: List $GITHUB_WORKSPACE
-        run: echo $PWD && echo $GITHUB_WORKSPACE && chmod +x ${GITHUB_WORKSPACE}/.github/script.sh && ls -lR ${GITHUB_WORKSPACE}
 #      - name: Test Custom script
 #        run: bash script.sh ${GITHUB_WORKSPACE}
       - name: Run Custom code
         run: bash script.sh ${GITHUB_WORKSPACE}
-#        run: |
-#          chmod +x "${GITHUB_WORKSPACE}/.github/script.sh"
-#          "${GITHUB_WORKSPACE}/.github/script.sh ${GITHUB_WORKSPACE}"
         shell: bash
       - name: Install, build, and upload your site
         uses: withastro/action@v2
