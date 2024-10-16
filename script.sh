@@ -17,7 +17,7 @@ fi
 
 GITHUB_WORKSPACE=$1
 echo "Github workspace: $GITHUB_WORKSPACE"
-ls GITHUB_WORKSPACE
+ls $GITHUB_WORKSPACE
 
 BASE_DIR="test"
 BASE_DIR="${GITHUB_WORKSPACE}/src/content/docs"
