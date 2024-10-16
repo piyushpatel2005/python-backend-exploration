@@ -30,6 +30,7 @@ jobs:
         run: ls -la $GITHUB_WORKSPACE/.github
       - name: Run Custom code
         run: |
+          chmod +x "${GITHUB_WORKSPACE}/.github/script.sh"
           "${GITHUB_WORKSPACE}/.github/script.sh ${GITHUB_WORKSPACE}"
         shell: bash
       - name: Install, build, and upload your site
