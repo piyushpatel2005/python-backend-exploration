@@ -1,12 +1,13 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
+title: Welcome to Python BackEnd Explorations
+description: Start learning from guided set of tutorials for Python and backend development.
 template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: Start learning skills in demand.
   image:
     file: ../../assets/houston.webp
   actions:
+    # use base url to link to the root of the site
     - text: Python Tutorials
       link: /python-backend-exploration/python/
       icon: right-arrow
@@ -14,23 +15,32 @@ hero:
     - text: FastAPI Tutorials
       link: /python-backend-exploration/fastapi/
       icon: right-arrow
+    - text: Django Tutorials
+      link: /python-backend-exploration/django/
+      icon: right-arrow
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import { defineConfig } from '../../../astro.config.mjs';
 
-## Next steps
+## Available Tutorials
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+	<LinkCard
+    title="First Steps with Python"
+    href="/python-backend-exploration/python/"
+    description="If you're new to programming, these tutorials will guide you to learn Pythons."
+  />
+  <LinkCard
+    title="FastAPI"
+    href="/python-backend-exploration/fastapi/"
+    description="Learn one of the latest web frameworks in Python. Easily create RESTful web APIs"
+  />
+  <LinkCard
+    title="Django"
+    href="/python-backend-exploration/django/"
+    description="Most versatile and feature-rich web framework in Python Ecosystem."
+  />
+
 </CardGrid>
+

@@ -2,14 +2,20 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
+const baseUrl = 'https://piyushpatel2005.github.io';
+const base = baseUrl.endsWith('github.io') ? 'python-backend-exploration' : '';
 export default defineConfig({
-	site: 'https://piyushpatel2005.github.io',
-	base: 'python-backend-exploration',
+	site: baseUrl,
+	base: base,
 	integrations: [
 		starlight({
-			title: 'Python Dev',
+			title: 'Python Explorations',
+			customCss: [
+				'./src/styles/custom.css'
+			],
 			social: {
-				github: 'https://github.com/piyushpatel2005/python-backend-exploration',
+				// add if you need to add link to social media
+				// github: 'https://github.com/piyushpatel2005/python-backend-exploration',
 			},
 			sidebar: [
 				{

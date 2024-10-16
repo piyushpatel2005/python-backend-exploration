@@ -6,5 +6,40 @@ This is a exploration repo for Python Backend projects with tutorials.
 
 ## Local Set up
 
-Visit [Django Exploration](https://piyushpatel2005.github.io/python-backend-exploration) for the tutorials walk through.
+- NodeJS 20.0 or above
+- npm 7.0 or above
+
+```bash
+npm install
+```
+
+```bash
+npm run dev
+```
+
+
+```bash
+npm run build
+```
+
+```bash
+npm run deploy
+```
+
+## Adding New Lessons
+
+- Create new directory structure like `src/content/docs/fastapi` for new tutorials on a topic.
+- Add top level `title`, `prev` and `next` in each file. Also, include `order` to order the content in the sidebar.
+
+These files will be flattened in the Github action to make the sturcture like `src/content/docs/fastapi/topic.md` file structures.
+
+## Adding to the Sidebar
+
+- Modify the `astro.config.mjs` file to include the new directory in the sidebar to create custom sidebar for that topic tutorial.
+
+Top level settings are in this file so if you want to change the title or the base url, you can modify here.
+
+## Using splash template
+
+If you're using `splash` template for any of the pages, you might need to define the `hero` object in the frontmatter of the file. If you're using that, you might need to change the `link` depending on your base url.
 

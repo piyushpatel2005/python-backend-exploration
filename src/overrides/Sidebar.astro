@@ -14,52 +14,7 @@ Astro.props.sidebar = Astro.props.sidebar
       (subEntry) => subEntry.type === 'link' && subEntry.href.startsWith(currentBase)
     )
   ));
-// Astro.props.sidebar
-//     .filter((entry) => (
-//         entry.type === 'group' &&
-//         entry.entries.some(
-//             (subEntry) => subEntry.type === 'link' && subEntry.href.startsWith(currentBase)
-//         )
-//     )).forEach((entry) => {
-//         console.log(entry.label);
-// });
-// console.log(typeof Astro.props.sidebar);
-// console.log(Astro.props.sidebar);
-// Astro.props.sidebar.forEach((entry) => {
-//     entry.entries.forEach((subEntry) => {
-//         console.log(subEntry.entries);
-//     });
-// });
-// console.log(Astro.props.sidebar);
-
-
-// Astro.props.sidebar = [
-//     {
-//         "type": "group",
-//         "label": "Python Tutorial",
-//         "collapsed": false,
-//         badge: undefined,
-//         "entries":[
-//             {
-//                 "type": "link",
-//                 "label": "Args and Kwargs",
-//                 "href": "/python-backend-exploration/python/args-and-kwargs/",
-//                 "badge": undefined,
-//                 "isCurrent": false,
-//                 attrs: {}
-//             },
-//             {
-//                 "type": "link",
-//                 "label": "Variables and Data Types",
-//                 "href": "/python-backend-exploration/python/variables-and-data-types/",
-//                 "badge": undefined,
-//                 "isCurrent": false,
-//                 attrs: {}
-//             }
-//         ]
-//     }
-// ]
-
+// Reference: https://github.com/withastro/starlight/discussions/959#discussioncomment-10339254
 ---
 
 <Default {...Astro.props}><slot /></Default>
