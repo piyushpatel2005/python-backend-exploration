@@ -16,8 +16,9 @@ if [ "$#" -ne 1 ]; then
 fi
 
 GITHUB_WORKSPACE=$1
-echo $GITHUB_WORKSPACE
-ls $GITHUB_WORKSPACE
+echo "Github workspace: $GITHUB_WORKSPACE"
+echo "Github repo: ${GITHUB_REPOSITORY}"
+ls $GITHUB_GITHUB_REPOSITORY
 
 BASE_DIR="test"
 BASE_DIR="${GITHUB_WORKSPACE}/src/content/docs"
