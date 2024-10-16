@@ -20,6 +20,16 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
+      - name: Echo GITHUB_WORKSPACE
+        run: echo $GITHUB_WORKSPACE
+      - name: Echo GITHUB_REPOSITORY
+        run: echo $GITHUB_REPOSITORY
+      - name: Echo BUILD_NUMBER
+        run: echo $BUILD_NUMBER
+      - name: List $GITHUB_REPOSITORY
+        run: ls -la $GITHUB_REPOSITORY
+      - name: List $GITHUB_WORKSPACE
+        run: ls -la $GITHUB_WORKSPACE
       - name: Run Custom code
         run: |
           "${GITHUB_REPOSITORY}/.github/script.sh ${GITHUB_WORKSPACE}"
