@@ -27,10 +27,10 @@ jobs:
       - name: Echo BUILD_NUMBER
         run: echo $BUILD_NUMBER
       - name: List $GITHUB_WORKSPACE
-        run: ls -la $GITHUB_WORKSPACE
+        run: ls -la $GITHUB_WORKSPACE/.github
       - name: Run Custom code
         run: |
-          "${GITHUB_REPOSITORY}/.github/script.sh ${GITHUB_WORKSPACE}"
+          "${GITHUB_WORKSPACE}/.github/script.sh ${GITHUB_WORKSPACE}"
         shell: bash
       - name: Install, build, and upload your site
         uses: withastro/action@v2
