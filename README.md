@@ -30,6 +30,7 @@ npm run deploy
 
 - Create new directory structure like `src/content/docs/fastapi` for new tutorials on a topic.
 - Add top level `title`, `prev` and `next` in each file. Also, include `order` to order the content in the sidebar.
+- In the main `index.md` file, you might need to replace the links with `index.md` removed from there if you copied them from other exploration repos.
 
 These files will be flattened in the Github action to make the sturcture like `src/content/docs/fastapi/topic.md` file structures.
 
