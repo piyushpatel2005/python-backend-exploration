@@ -14,6 +14,7 @@ FastAPI is a modern, fast (high-performance), web framework for building APIs wi
 - [OpenAPI and Swagger UI](openapi-swagger-ui/index.md)
 - [Handling POST, PATCH and DELETE Request](implementing-crud/index.md)
 - [Using APIRouter](using-api-router/index.md)
+- [Error Handling](error-handling/index.md)
 - [Pydantic BaseModel](pydantic-base-model/index.md)
 - [Unit Testing with Pytest](unit-testing/index.md)
 - [Unit Testing FastAPI](unit-testing-fastapi/index.md)
