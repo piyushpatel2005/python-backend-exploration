@@ -19,6 +19,6 @@ FastAPI is a modern, fast (high-performance), web framework for building APIs wi
 - [Unit Testing with Pytest](unit-testing/index.md)
 - [Unit Testing FastAPI](unit-testing-fastapi/index.md)
 - [Returning Correct Response Status Codes](response-status-codes/index.md)
-- [Request Body](request-body/index.md)
-- [Response Model](response-model/index.md)
+- [Request Models](request-models/index.md)
+- [Response Models](response-models/index.md)
 - [Dependencies](dependencies/index.md)
