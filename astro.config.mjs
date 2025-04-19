@@ -19,10 +19,11 @@ export default defineConfig({
 			],
 			
 			// Removed as no longer overriding but using starlight-sidebar-topics plugin
-			// components: {
-			// 	// Add custom components to the Astro project
-			// 	Sidebar: './src/components/Sidebar.astro',
-			// }
+			components: {
+				// Add custom components to the Astro project
+				Sidebar: './src/overrides/Sidebar.astro',
+				Topics: './src/overrides/Topics.astro',
+			},
 			plugins: [
 				starlightSidebarTopics(
 					[
@@ -52,13 +53,17 @@ export default defineConfig({
 								label: 'Django Tutorials',
 								autogenerate: { directory: 'django/' },
 							}]
-						}
+						},
 					],
-					// {
-					// 	topics: {
-					// 		python: ['python/*', 'python/**/*'],
-					// 	},
-					// }
+					{
+						exclude: ['/guides/*', '/guides/**/*', '/reference/*', '/reference/**/*'],
+					},
+					{
+						topics: {
+							guides: ['guides/*', 'guides/**/*'],
+							reference: ['reference/*', 'reference/**/*'],
+						},
+					}
 				)
 			]
 		}),
