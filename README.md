@@ -26,6 +26,12 @@ npm run build
 npm run deploy
 ```
 
+## Configurations
+
+### Sidebar
+
+The sidebar is generated using [starlight-sidebar-topics](https://starlight-sidebar-topics.netlify.app/docs/configuration/). You can change the order of items by passing `sidebar.order` in the frontmatter as shown in FastAPI pages.
+
 ## Adding New Lessons
 
 - Create new directory structure like `src/content/docs/fastapi` for new tutorials on a topic.
